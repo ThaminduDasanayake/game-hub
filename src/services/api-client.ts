@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-const API_KEY = import.meta.env.RAWG_API_KEY;
+const API_KEY = import.meta.env.VITE_RAWG_API_KEY;
 
 if (!API_KEY) {
-  throw new Error("Missing RAWG_API_KEY in environment variables");
+  throw new Error("Missing VITE_RAWG_API_KEY in environment variables");
 }
 
 export interface FetchResponse<T> {
