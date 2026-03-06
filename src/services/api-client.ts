@@ -1,5 +1,11 @@
 import axios, { AxiosRequestConfig } from "axios";
 
+const API_KEY = import.meta.env.VITE_API_KEY;
+
+if (!API_KEY) {
+  throw new Error("Missing VITE_API_KEY in environment variables");
+}
+
 export interface FetchResponse<T> {
   count: number;
   next: string | null;
@@ -9,7 +15,7 @@ export interface FetchResponse<T> {
 const axiosInstance = axios.create({
   baseURL: "https://api.rawg.io/api",
   params: {
-    key: "508776796d824b07baf77f93343190e8",
+    key: API_KEY,
   },
 });
 
